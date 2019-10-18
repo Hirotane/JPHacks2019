@@ -1,0 +1,66 @@
+{% load static %}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static "css/dj_talk.css" %}"></link>
+{% endblock %}
+
+{% block title %}
+  CharFieldのサンプルいろいろ
+{% endblock %}
+
+{% block content %}
+<div class="container bg-light">
+    <form action="" method="post">{% csrf_token %}
+        <h1>ビルトインフォームサンプル</h1>
+        {% if ret %}
+        	{% for key,val in results.items %}
+        	<div class="form-group row my-4">  
+            	<label class="col-lg-3 col-form-label">
+            		<h4>{{ key }}</h4>
+            	</label>
+       			<div class="col-lg-6">       
+	            	<h4>{{ val }}</h4>
+    			</div>
+    		</div>        	
+        	{% endfor %}
+        {% else %}
+        	{% for key,val in errors.items %}
+        		<p>{{ key }} : {{ val }}</p>
+        	{% endfor %}
+        	{% for field in form %}
+        	{% if field.field.widget.input_type == "radio" %}
+    		<div class="form-group row my-4">
+    		   	<div class="col-lg-2 col-form-label">
+            		
+            	</div>
+    			<div class="col-lg-2  form-check">
+    			{% for r in field %}
+    			{{ r }}
+    			{% endfor %}
+    			</div>    			
+    		</div>
+    		{% else %}
+    		<div class="form-group row my-4">
+    		    <div class="col-lg-2 col-form-label">
+            		{{ field.label_tag }}
+            	</div>
+    			<div class="col-lg-2 form-check">
+    			{% for c in field %}
+    			{{ c }}
+    			{% endfor %}
+    			</div>
+    		</div>
+    		{% endif %}
+			{% endfor %}
+			
+		   	<div class="form-group row my-4">	
+    			<div class="col-lg-3">       
+	        	    <button type="submit" class="btn btn-primary">送信する</button>
+    			</div>
+        	</div>
+         {% endif %}
+     </form>
+</div>  
+{% endblock %}    
