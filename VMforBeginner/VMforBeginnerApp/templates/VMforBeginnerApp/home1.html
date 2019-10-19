@@ -27,7 +27,7 @@ nav {
 <form action='?{% url_replace_with_nodelete request %}' method="POST">
 
 <nav class="navbar navbar-inverse bg-inverse">
-  <a class="navbar-brand" href="#">django-torina-editor</a>
+  <a class="navbar-brand" href="#">Tenchi-Sozo</a>
 </nav>
 
 <!-- ファイル選択とコード入力欄 -->
@@ -49,7 +49,7 @@ nav {
   <form action="{% url  'VMforBeginnerApp:demo03' %}"> {% csrf_token %}
     <input type="submit" value="Button"/>
   </form>
-  
+
 {% include "VMforBeginnerApp/home2.html" %}
   <form action="{% url  'VMforBeginnerApp:home2' %}"> {% csrf_token %}
     <input type="submit" value="Home2"/>

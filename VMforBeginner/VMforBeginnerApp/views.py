@@ -326,7 +326,7 @@ def demo3(request):
                 i = i[0]
                 cmd = f'pip install -U {i}'
                 info(cmd)
-                # execute_cmd(cmd)
+                execute_cmd(cmd)
             else:
                 pass
         # c = {'results': results}

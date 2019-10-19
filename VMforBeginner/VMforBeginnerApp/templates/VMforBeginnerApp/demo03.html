@@ -14,7 +14,7 @@
 <div class="container bg-light">
     <form action="" method="post">{% csrf_token %}
         <h1>ビルトインフォームサンプル</h1>
-        {% if ret %}
+        <!-- {% if ret %}
         	{% for key,val in results.items %}
         	<div class="form-group row my-4">
             	<label class="col-lg-3 col-form-label">
@@ -24,13 +24,13 @@
 	            	<h4>{{ val }}</h4>
     			</div>
     		</div>
-        	{% endfor %}
-        {% else %}
+        	{% endfor %} -->
+        <!-- {% else %}
         	{% for key,val in errors.items %}
         		<p>{{ key }} : {{ val }}</p>
-        	{% endfor %}
+        	{% endfor %} -->
         	{% for field in form1 %}
-        	{% if field.field.widget.input_type == "radio" %}
+        	<!-- {% if field.field.widget.input_type == "radio" %}
     		<div class="form-group row my-4">
     		   	<div class="col-lg-2 col-form-label">
 
@@ -41,7 +41,7 @@
     			{% endfor %}
     			</div>
     		</div>
-    		{% else %}
+    		{% else %} -->
     		<div class="form-group row my-4">
     		    <div class="col-lg-2 col-form-label">
             		{{ field.label_tag }}
@@ -52,12 +52,12 @@
     			{% endfor %}
     			</div>
     		</div>
-    		{% endif %}
+    		<!-- {% endif %} -->
 			{% endfor %}
 
 		   	<div class="form-group row my-4">
     			<div class="col-lg-3">
-	        	    <button type="submit" class="btn btn-primary">送信する</button>
+	        	    <button type="submit" class="btn btn-primary">Install</button>
     			</div>
         	</div>
          {% endif %}

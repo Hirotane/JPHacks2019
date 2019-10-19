@@ -56,3 +56,26 @@
 [INFO]	asctime:2019-10-19 06:05:57,204	module:views	message:{'„Åù„ÅÆ‰ªñ': ['numpy'], 'Ê©üÊ¢∞Â≠¶Áøí': ['keras']}	process:7207	thread:123145373134848
 [INFO]	asctime:2019-10-19 06:05:57,204	module:views	message:pip install -U numpy	process:7207	thread:123145373134848
 [INFO]	asctime:2019-10-19 06:05:57,204	module:views	message:pip install -U keras	process:7207	thread:123145373134848
+[INFO]	asctime:2019-10-20 00:03:20,393	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:19932	thread:7508
+[INFO]	asctime:2019-10-20 00:05:28,230	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:13944	thread:10420
+[INFO]	asctime:2019-10-20 00:05:34,209	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:13944	thread:20348
+[INFO]	asctime:2019-10-20 00:07:46,590	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:13944	thread:19440
+[INFO]	asctime:2019-10-20 00:10:37,450	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:13944	thread:19472
+[INFO]	asctime:2019-10-20 00:13:54,800	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:13944	thread:2840
+[INFO]	asctime:2019-10-20 00:16:04,232	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:16692	thread:7448
+[INFO]	asctime:2019-10-20 00:16:04,233	module:views	message:pip install -U numpy	process:16692	thread:7448
+[INFO]	asctime:2019-10-20 00:20:02,957	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:1756	thread:18892
+[INFO]	asctime:2019-10-20 00:20:02,958	module:views	message:pip install -U numpy	process:1756	thread:18892
+[INFO]	asctime:2019-10-20 00:21:49,222	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:9444	thread:19992
+[INFO]	asctime:2019-10-20 00:21:49,223	module:views	message:pip install -U numpy	process:9444	thread:19992
+[INFO]	asctime:2019-10-20 00:23:33,596	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:8040	thread:17512
+[INFO]	asctime:2019-10-20 00:23:33,597	module:views	message:pip install -U numpy	process:8040	thread:17512
+[INFO]	asctime:2019-10-20 00:30:21,702	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:22012	thread:7276
+[INFO]	asctime:2019-10-20 00:30:21,707	module:views	message:pip install numpy	process:22012	thread:7276
+[INFO]	asctime:2019-10-20 00:31:41,933	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:22204	thread:18372
+[INFO]	asctime:2019-10-20 00:31:41,948	module:views	message:pip install -U numpy	process:22204	thread:18372
+[INFO]	asctime:2019-10-20 00:34:32,965	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:24060	thread:23656
+[INFO]	asctime:2019-10-20 00:34:32,997	module:views	message:pip install -U numpy	process:24060	thread:23656
+[INFO]	asctime:2019-10-20 00:39:08,469	module:views	message:{'ÇªÇÃëº': ['numpy'], 'ã@äBäwèK': []}	process:25208	thread:9788
+[INFO]	asctime:2019-10-20 00:39:08,470	module:views	message:pip install -U numpy	process:25208	thread:9788
+[INFO]	asctime:2019-10-20 01:14:33,542	module:views	message:{'ÇªÇÃëº': [], 'ã@äBäwèK': []}	process:34608	thread:32624
