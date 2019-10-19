@@ -1,0 +1,44 @@
+{{ form.select_python }}<br>
+<span class="text-muted">※「ファイルとして実行」、「venvを作る」、「pipを行う」に影響します</span>
+<hr>
+{{ form.pip_name }}<br>
+<span class="text-muted"><br>
+<button type="submit" name="submit-kind" value="pip_install" class="btn btn-info btn-sm">pip-install
+</button>
+<button type="submit" name="submit-kind" value="pip_freeze" class="btn btn-info btn-sm">pip-freeze
+</button>
+<button type="submit" name="submit-kind" value="pip_freeze_write" class="btn btn-info btn-sm">pip-freeze-write
+</button>
+<hr>
+<p>
+  <span class="text-muted">開いているファイルのパス:</span>
+  {% if open_file_path %}
+    {{ open_file_path }}
+  {% else %}
+    まだ開いていません
+  {% endif %}
+</p>
+
+<p>
+  <span class="text-muted">開いているファイル名:</span>
+  {{ file_name }}
+</p>
+
+<p>
+  <span class="text-muted">開いているファイルの種類（モード）:</span>
+  {{ file_type }}
+</p>
+
+<p>
+  <span class="text-muted">venvのパス:</span>
+  {% if venv_path %}
+    {{ venv_path }}
+  {% else %}
+    まだ開いていません
+  {% endif %}
+</p>
+
+<p>
+  <span class="text-muted">開いているディレクトリ:</span>
+  {{ current_path }}
+</p>
