@@ -1,0 +1,60 @@
+{% extends "VMforBeginnerApp/base.html" %}
+{% load filter %}
+{% block title %}
+  {{ file_name }} - {{ open_file_path }}
+{% endblock %}
+{% block content %}
+<style>
+#delete{
+  display: none;
+}
+</style>
+
+
+<form action='?{% url_replace_with_nodelete request %}' method="POST">
+
+<div class="contents">
+
+  <div class="uicontents">
+    {% include "VMforBeginnerApp/includes/ui.html" %}
+  </div>
+
+  <div id = "delete">
+    {% include "VMforBeginnerApp/includes/settings1.html" %}
+  </div>
+
+  <div id = "delete">
+  {% include "VMforBeginnerApp/demo03.html" %}
+  </div>
+
+  <form class = "btnset" action="{% url  'VMforBeginnerApp:demo03' %}"> {% csrf_token %}
+    <input type="submit" value="Setting"/>
+  </form>
+
+  <form class = "btnhome2" action="{% url  'VMforBeginnerApp:home2' %}"> {% csrf_token %}
+    <input type="submit" value="Home2"/>
+  </form>
+
+  <button type="submit" name="submit-kind" value="jupyternotebook" class="btnjupyter">
+    jupyter notebook
+  </button>
+
+</div>
+
+<div class = "image">
+  {% load static %}
+  <img src="{% static 'VMforBeginnerApp/img/home1.PNG'  %}">
+</div>
+
+
+
+<!-- 出力表示エリア -->
+<!-- {% comment %} のま:あとで消す {% endcomment %}
+<div id="output-wrapper">
+  {% include "VMforBeginnerApp/includes/output_area1.html" %}
+</div> -->
+
+{% csrf_token %}
+</form>
+
+{% endblock %}
