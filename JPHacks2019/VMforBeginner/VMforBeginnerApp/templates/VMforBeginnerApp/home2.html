@@ -1,0 +1,5 @@
+{% include "VMforBeginnerApp/demo03.html" %}
+  <form action="{% url  'VMforBeginnerApp:demo03' %}"> {% csrf_token %}
+    <input type="submit" value="Setting"/>
+  </form>
+  <p>Home2</p>
