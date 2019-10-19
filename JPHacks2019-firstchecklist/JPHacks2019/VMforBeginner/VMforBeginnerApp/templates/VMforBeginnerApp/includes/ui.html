@@ -1,0 +1,16 @@
+{% load filter %}
+<div class="container-fluid">
+    {{ current_path }} {{ form.dir_name }}<br>
+    <button type="submit" name="submit-kind" value="make_dir" class="btn btn-info btn-sm">
+      フォルダの作成
+    </button>
+    <button type="submit" name="submit-kind" value="venv" class="btn btn-info btn-sm">
+      venvの作成
+    </button>
+    {% if path_list.venv %}
+        <a class="btn btn-info btn-sm" href="?{% url_replace_with_nodelete request 'venv_path' path_list.venv %}">VenvをActivate</a>
+    {% endif %}
+
+   
+    <hr>
+</div>
