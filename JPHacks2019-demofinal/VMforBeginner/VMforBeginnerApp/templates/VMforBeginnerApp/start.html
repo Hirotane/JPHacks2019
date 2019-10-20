@@ -1,0 +1,44 @@
+<style>
+  #body{
+    background-color:#373937;
+    text-align:center;
+  }
+
+  #pic{
+    height:100vh;
+  }
+
+  #home1{
+    width:200px;
+    height:200px;
+    position:absolute;
+   bottom: 40px;
+   left:100px;
+   background-color:tomato;
+   border:0px;
+   opacity:0;
+  }
+
+  #all{
+    width:200px;
+    height:200px;
+    position:absolute;
+   bottom: 80px;
+   right:150px;
+   border:0px;
+   opacity:0;
+  }
+
+</style>
+
+<body id = 'body'>
+    {% load static %}
+    <img src="{% static 'VMforBeginnerApp/img/wallpaper.png'  %}" id = "pic">
+
+<form action="{% url  'VMforBeginnerApp:home1' %}"> {% csrf_token %}
+  <input id = "home1" type="submit" value="Home1"/>
+</form>
+<form action="{% url  'VMforBeginnerApp:all' %}"> {% csrf_token %}
+  <input id = "all" type="submit" value="All"/>
+</form>
+<body>

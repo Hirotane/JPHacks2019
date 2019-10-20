@@ -1,0 +1,31 @@
+{% load filter %}
+<form action='?{% url_replace_with_nodelete request %}' method="POST">
+    <div class="container-fluid">
+        {{ current_path }}<br>
+        <p>仮想環境一覧</p>
+        {% for dir in path_list.dirs %}
+            <a href="?{% url_replace_with_nodelete request 'dir_path' dir.1 %}">{{ dir.0 }}</a>
+
+        {% if forloop.counter != 1 %}
+           <a class="float-right" href="?{% url_replace request 'delete_path' dir.1 %}">削除</a>
+            {% endif %}
+
+            
+            <hr>
+        {% endfor %}
+
+        <p>ファイル一覧</p>
+        {% for file in path_list.files %}
+            <a href="?{% url_replace_with_nodelete request 'open_file_path' file.1 %}">{{ file.0 }}</a>
+            {% if file.0 == 'requirement.txt' %}
+                {{ file_content }}
+                {% comment %} <h>requirement.txtが認識されています</h> {% endcomment %}
+            {% endif %}
+            <a class="float-right" href="?{% url_replace request 'delete_path' file.1 %}">削除</a>
+            
+
+            
+            <hr>
+        {% endfor %}
+    </div>
+</form>

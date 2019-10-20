@@ -1,0 +1,143 @@
+<style>
+  .checkitem label {
+    cursor: pointer;
+    font-size: 12pt;
+    display: block;
+    overflow: hidden;
+    padding-top: 20px;
+    position: relative;
+    min-height:40px;
+  }
+
+  .checkitem input{
+    border: 2px solid #5a5a5a;
+    color: #1d1d1d;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 14px;
+    margin: 0 20px 20px 20px;
+    outline-color: #eaeaea;
+    padding: 0;
+    position:relative;
+    width: 14px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    z-index:1;
+  }
+
+
+  .checkitem input:checked{
+    border-left: 2px solid green;
+    border-bottom: 4px solid green;
+    border-top: 1px solid rgba(0,0,0,0);
+    border-right: 1px solid rgba(0,0,0,0);
+  }
+
+
+
+  input[type='checkbox'].wskCheckbox input {
+     display: none;
+   }
+
+  #save{
+    background-color: #ffeb38;
+    color: #000;
+    width: 300px;
+    padding: 0.8em;
+    text-decoration: none;
+    border-radius: 70px;
+    margin:20px 0;
+    border:0px;
+  }
+
+  #next{
+    background-color: #373937;
+    color: #fff;
+    width: 300px;
+    padding: 0.8em;
+    text-decoration: none;
+    border-radius: 70px;
+    margin:20px 0;
+    border:2px solid #fff;
+  }
+  
+
+</style>
+
+
+
+{% load static %}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+
+{% block header %}
+<!-- マイ CSS -->
+<link rel="stylesheet" href="{% static 'VMforBeginnerApp/css/demo03.css'  %}">
+{% endblock %}
+<!--
+{% block title %}
+  CharFieldのサンプルいろいろ
+{% endblock %} -->
+
+{% block content %}
+<div class="container bg-light">
+    <form action="" method="post">{% csrf_token %}
+        <!-- <h1>ビルトインフォームサンプル</h1> -->
+        <!-- {% if ret %}
+        	{% for key,val in results.items %}
+        	<div class="form-group row my-4">
+            	<label class="col-lg-3 col-form-label">
+            		<h4>{{ key }}</h4>
+            	</label>
+       			<div class="col-lg-6">
+	            	<h4>{{ val }}</h4>
+    			</div>
+    		</div>
+        	{% endfor %} -->
+        <!-- {% else %}
+        	{% for key,val in errors.items %}
+        		<p>{{ key }} : {{ val }}</p>
+        	{% endfor %} -->
+        	{% for field in form1 %}
+        	<!-- {% if field.field.widget.input_type == "radio" %}
+    		<div class="form-group row my-4">
+    		   	<div class="col-lg-2 col-form-label">
+
+            	</div>
+    			<div class="col-lg-2  form-check">
+    			{% for r in field %}
+    			{{ r }}
+    			{% endfor %}
+    			</div>
+    		</div>
+    		{% else %} -->
+    		<div class="checklist">
+    		    <div class="checklabel">
+            		{{ field.label_tag }}
+            	</div>
+    			<div class="checkitem">
+				{% for c in field %}
+				<div class = "checkeach">
+				{{ c }}
+				</div>
+    			{% endfor %}
+    			</div>
+    		</div>
+    		<!-- {% endif %} -->
+			{% endfor %}
+
+		   	<div class="form-group row my-4">
+    			<div class="col-lg-3">
+	        	    <button id = 'save' type="submit" class="btn btn-primary">SAVE</button>
+    			</div>
+        	</div>
+         {% endif %}
+     </form>
+
+       <form action="{% url  'VMforBeginnerApp:home3' %}"> {% csrf_token %}
+         <input id = 'next' type="submit" value="NEXT"/>
+       </form>
+</div>
+{% endblock %}
