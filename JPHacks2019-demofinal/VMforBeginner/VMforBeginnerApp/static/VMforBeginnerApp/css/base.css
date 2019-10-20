@@ -1,0 +1,8 @@
+html, body{
+	height: 100%;
+	background-color:#373937;
+}
+
+.scroll {
+	overflow: scroll;
+}

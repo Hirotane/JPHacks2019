@@ -1,0 +1,153 @@
+{% extends "VMforBeginnerApp/base.html" %}
+{% load filter %}
+{% block title %}
+  {{ file_name }} - {{ open_file_path }}
+{% endblock %}
+{% block content %}
+<style>
+#delete{
+  display: none;
+}
+
+#contents{
+  margin:0;
+  padding:0;
+  width:30%;
+  background-color:#373937;
+  display:inline-block;
+  text-align: center;
+}
+
+#image{
+  margin:0;
+  padding:0;
+  width:65%;
+  background-color:#373937;
+  display:inline-block;
+  text-align: center;
+}
+
+#pic{
+  margin:0;
+  padding:0;
+  height:100vh;
+}
+
+.uicontents{
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+#buttons{
+  background-color:#373937;
+  text-align:center;
+}
+
+#btnvenv{
+background-color: #ffeb38;
+color: #000;
+width: 300px;
+padding: 0.8em;
+text-decoration: none;
+border-radius: 70px;
+margin:20px 0;
+border:0px;
+}
+
+#btnhome2{
+  background-color: #ffeb38;
+  color: #000;
+  width: 300px;
+  padding: 0.8em;
+  text-decoration: none;
+  border-radius: 70px;
+  margin:20px 0;
+  border:0px;
+}
+
+#btnset{
+background-color: #373937;
+color: #fff;
+width: 300px;
+padding: 0.8em;
+text-decoration: none;
+border-radius: 70px;
+margin:20px 0;
+border:2px solid #fff;
+}
+
+#btnjupyter{
+background-color: #373937;
+color: #fff;
+width: 300px;
+padding: 0.8em;
+text-decoration: none;
+border-radius: 70px;
+margin:20px 0;
+border:2px solid #fff;
+}
+
+.dirname input{
+  padding: 0.8em;
+  background-color: #fff;
+  width: 300px;
+  border-radius: 70px;
+  margin-bottom:20px;
+  border:0px;
+}
+
+.dirname{
+  margin:0;
+  padding:0;
+}
+
+</style>
+
+
+<form action='?{% url_replace_with_nodelete request %}' method="POST" id = "buttons">
+
+  <div id = "image">
+    {% load static %}
+    <img src="{% static 'VMforBeginnerApp/img/home1.PNG'  %}" id = "pic">
+  </div>
+
+  <div id="contents">
+
+    <div class="uicontents">
+      {% include "VMforBeginnerApp/includes/ui.html" %}
+    </div>
+
+    <div id = "delete">
+      {% include "VMforBeginnerApp/includes/settings1.html" %}
+    </div>
+
+    <div id = "delete">
+    {% include "VMforBeginnerApp/demo03.html" %}
+    </div>
+
+    <form  action="{% url  'VMforBeginnerApp:home2' %}"> {% csrf_token %}
+      <input id = "btnhome2" type="submit" value="HELLO WORLD"/>
+    </form>
+
+    <form  action="{% url  'VMforBeginnerApp:demo03' %}"> {% csrf_token %}
+      <input id = "btnset" type="submit" value="DESIGN WORLD"/>
+    </form>
+
+
+    <button type="submit" name="submit-kind" value="jupyternotebook" id="btnjupyter">
+      GO!
+    </button>
+
+  </div>
+
+ {% comment %} 出力表示エリア  {% endcomment %}
+ {% comment %} のま:あとで消す {% endcomment %}
+{% comment %} <div id="output-wrapper">
+  {% include "VMforBeginnerApp/includes/output_area1.html" %}
+</div>  {% endcomment %}
+
+{% csrf_token %}
+</form>
+
+{% endblock %}
